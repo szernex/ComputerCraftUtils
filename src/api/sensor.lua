@@ -34,7 +34,11 @@ function scan(enter_callback, leave_callback)
       local data = Sensor.getPlayerData(player)
 
       ScannedPlayers[player] = data
-      enter_callback(data)
+
+      assert(type(enter_callback) == "function" or enter_callback == nil, "enter_callback is not a function")
+      if enter_callback ~= nil then
+        enter_callback(data)
+      end
     end
   end
 
@@ -45,7 +49,11 @@ function scan(enter_callback, leave_callback)
     local remove = false
 
     if temp[player] == nil then
-      leave_callback(data)
+      assert(type(leave_callback) == "function" or leave_callback == nil, "leave_callback is not a function")
+      if leave_callback ~= nil then
+        leave_callback(data)
+      end
+
       ScannedPlayers[player] = false
       remove = true
     end
