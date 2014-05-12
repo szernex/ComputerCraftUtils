@@ -1,7 +1,6 @@
 -- ---------------------------
--- Free to copy and modify
--- ALWAYS INCLUDE THIS HEADER
--- (c) Szernex 2014
+-- Licensed under the MIT License (MIT)
+-- Copyright (c) 2014 Szernex
 -- ---------------------------
 
 function split(text, delimiter)
